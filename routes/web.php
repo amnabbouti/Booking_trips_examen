@@ -4,9 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Redirect root to login
+Route::get('/', [AuthController::class, 'showLogin']);
 
 // Auth routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
