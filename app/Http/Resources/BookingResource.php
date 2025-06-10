@@ -26,4 +26,26 @@ class BookingResource extends JsonResource
             ]
         ];
     }
+
+    /**
+     * wrap bookings collection with status and message
+     */
+    public static function collection($resource)
+    {
+        return [
+            'status' => 'success',
+            'message' => 'Bookings retrieved successfully',
+            'data' => $resource->map(function ($booking) {
+                return [
+                    'id' => $booking->id,
+                    'trip_id' => $booking->trip_id,
+                    'name' => $booking->name,
+                    'email' => $booking->email,
+                    'number_of_people' => $booking->number_of_people,
+                    'status' => $booking->status,
+                    'created_at' => $booking->created_at,
+                ];
+            })
+        ];
+    }
 }
