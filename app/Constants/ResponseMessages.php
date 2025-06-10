@@ -14,7 +14,9 @@ class ResponseMessages
     const TRIP_NOT_FOUND = 'This trip does not exist';
     const VALIDATION_FAILED = 'Validation failed';
     const INTERNAL_ERROR = 'Something went wrong';
-    
+
     // booking specific
     const MIN_PEOPLE = 'You need at least 1 person for the booking';
+
+    const INVALID_CREDENTIALS = 'Invalid credentials';
 }
