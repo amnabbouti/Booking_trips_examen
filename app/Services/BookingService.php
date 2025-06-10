@@ -8,7 +8,6 @@ class BookingService
 {
     /**
      *  i added the TripService to inject TripService in the constructor which allows us to check if a trip exists
-     *  when creating a booking
      *  this way we avoid that booking accesses trip directly
      */
     public function __construct(
@@ -48,5 +47,13 @@ class BookingService
     public function verifyToken(string $email, string $token): bool
     {
         return $this->generateToken($email) === $token;
+    }
+
+    /**
+     * Get all bookings
+     */
+    public function getAllBookings()
+    {
+        return Booking::all();
     }
 }
