@@ -47,7 +47,13 @@ class TripService
 
                 return $trip;
             });
-
     }
 
+    /**
+     * Check if a trip exists
+     */
+    public function tripExists(int $id): bool
+    {
+        return Trip::where('id', $id)->exists();
+    }
 }
