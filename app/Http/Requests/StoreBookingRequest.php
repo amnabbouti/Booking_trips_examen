@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Validator;
+use App\Constants\ResponseMessages;
 
 class StoreBookingRequest extends FormRequest
 {
@@ -43,7 +44,7 @@ class StoreBookingRequest extends FormRequest
                 $expectedToken = md5($email . 'canadarocks');
 
                 if ($token !== $expectedToken) {
-                    $validator->errors()->add('token', 'Invalid authentication token');
+                    $validator->errors()->add('token', ResponseMessages::TOKEN_INVALID);
                 }
             }
         });
@@ -55,9 +56,9 @@ class StoreBookingRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'trip_id.exists' => 'This trip does not exist',
-            'number_of_people.min' => 'You need at least 1 person for the booking',
-            'token.required' => 'Authentication token is required'
+            'trip_id.exists' => ResponseMessages::TRIP_NOT_FOUND,
+            'number_of_people.min' => ResponseMessages::MIN_PEOPLE,
+            'token.required' => ResponseMessages::TOKEN_REQUIRED
         ];
     }
 }
