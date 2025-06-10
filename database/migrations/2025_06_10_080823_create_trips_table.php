@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->enum('region', ['west', 'east', 'north', 'central']);
+            $table->date('start_date');
+            $table->integer('duration_days');
+            $table->decimal('price_per_person', 10, 2);
             $table->timestamps();
         });
     }
