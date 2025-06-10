@@ -7,7 +7,7 @@ class ResponseMessages
     // success messages
     const BOOKING_CREATED = 'Booking created successfully';
     const DATA_RETRIEVED = 'Data retrieved successfully';
-    
+
     // error messages
     const TOKEN_REQUIRED = 'Authentication token is required';
     const TOKEN_INVALID = 'Invalid authentication token';
@@ -17,5 +17,4 @@ class ResponseMessages
     
     // booking specific
     const MIN_PEOPLE = 'You need at least 1 person for the booking';
-    const EMAIL_INVALID = 'Please provide a valid email address';
 }

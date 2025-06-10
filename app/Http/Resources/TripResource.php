@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Constants\ResponseMessages;
 
 class TripResource extends JsonResource
 {
@@ -29,7 +30,7 @@ class TripResource extends JsonResource
     {
         return [
             'status' => 'success',
-            'message' => 'Trips retrieved successfully',
+            'message' => ResponseMessages::DATA_RETRIEVED,
         ];
     }
 }

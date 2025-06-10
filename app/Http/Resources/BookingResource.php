@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Constants\ResponseMessages;
 
 class BookingResource extends JsonResource
 {
@@ -14,7 +15,7 @@ class BookingResource extends JsonResource
     {
         return [
             'status' => 'success',
-            'message' => 'Booking created successfully',
+            'message' => ResponseMessages::BOOKING_CREATED,
             'data' => [
                 'id' => $this->id,
                 'trip_id' => $this->trip_id,
