@@ -48,4 +48,16 @@ class StoreBookingRequest extends FormRequest
             }
         });
     }
+
+    /**
+     * error messages for validation (thanks to laravel developers for this great feature, php is more fun than i thought!)
+     */
+    public function messages(): array
+    {
+        return [
+            'trip_id.exists' => 'This trip does not exist',
+            'number_of_people.min' => 'You need at least 1 person for the booking',
+            'token.required' => 'Authentication token is required'
+        ];
+    }
 }
