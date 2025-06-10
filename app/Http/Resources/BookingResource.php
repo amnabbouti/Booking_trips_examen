@@ -35,7 +35,7 @@ class BookingResource extends JsonResource
     {
         return [
             'status' => 'success',
-            'message' => 'Bookings retrieved successfully',
+            'message' => ResponseMessages::DATA_RETRIEVED,
             'data' => $resource->map(function ($booking) {
                 return [
                     'id' => $booking->id,
